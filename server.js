@@ -85,6 +85,6 @@ app.get("/api/personality/:type", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
