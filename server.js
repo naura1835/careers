@@ -48,6 +48,7 @@ app.get("/api/courses/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 app.post("/api/courses/result", (req, res) => {
+  console.log(req.body);
   const chem = parseInt(req.body.chemistry);
   const bio = parseInt(req.body.biology);
   const math = parseInt(req.body.mathematics);
