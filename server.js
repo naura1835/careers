@@ -18,7 +18,7 @@ client.connect(() => {
   console.log(`i feel connected`);
 });
 
-// app.use(cors());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(express.json());
