@@ -8,7 +8,7 @@ const PORT = 8000;
 
 let dbConnection;
 
-const client = new MongoClient(process.env.ATLAS_URI, {
+const client = new MongoClient(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
