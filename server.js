@@ -70,6 +70,12 @@ app.post("/api/courses/search", (req, res) => {
           },
         },
       },
+      {
+        $project: {
+          name: 1,
+          description: 1,
+        },
+      },
     ])
     .toArray()
     .then((result) => res.json(result))
