@@ -7,6 +7,22 @@ require("dotenv").config();
 const app = express();
 const PORT = 8000;
 
+const search = (query) => {
+  return [
+    {
+      $search: {
+        index: "searchCourse",
+        text: {
+          query: "engineering",
+          path: {
+            wildcard: "*",
+          },
+        },
+      },
+    },
+  ];
+};
+
 let dbConnection;
 
 const client = new MongoClient(process.env.MONGO_URI, {
@@ -15,13 +31,12 @@ const client = new MongoClient(process.env.MONGO_URI, {
 });
 client.connect(() => {
   dbConnection = client.db("career").collection("courses");
-  dbConnection.createIndex({ name: "text" });
   console.log(`i feel connected`);
 });
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use("/public", express.static("public"));
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -37,7 +52,31 @@ app.get("/api/courses", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
-app.get("/api/courses/:id", (req, res) => {
+
+app.post("/api/courses/search", (req, res) => {
+  const searchString = req.body.course;
+
+  dbConnection
+    .aggregate([
+      {
+        $search: {
+          index: "searchCourse",
+          text: {
+            query: searchString,
+            path: {
+              wildcard: "*",
+            },
+            fuzzy: {},
+          },
+        },
+      },
+    ])
+    .toArray()
+    .then((result) => res.json(result))
+    .catch((err) => console.log(err));
+});
+
+app.get("/api/courses/detail/:id", (req, res) => {
   const course = req.params.id.toLocaleLowerCase();
 
   dbConnection
@@ -47,8 +86,8 @@ app.get("/api/courses/:id", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+
 app.post("/api/courses/result", (req, res) => {
-  console.log(req.body);
   const chem = parseInt(req.body.chemistry);
   const bio = parseInt(req.body.biology);
   const math = parseInt(req.body.mathematics);
@@ -77,6 +116,7 @@ app.post("/api/courses/result", (req, res) => {
     .then((result) => res.json(result))
     .catch((err) => console.log(err));
 });
+
 app.get("/api/personality/:type", (req, res) => {
   const personalityType = req.params.type.toLocaleUpperCase();
 
