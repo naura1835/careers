@@ -18,7 +18,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("connected"));
+  .then(() => console.log("connected"))
+  .catch((err) => console.log(err));
 
 app.set("view engine", "ejs");
 app.set("layout", "layouts/layout");
