@@ -1,0 +1,30 @@
+<section
+  aria-labelledby="all-courses"
+  class="all-courses__introduction container flex"
+>
+  <div class="all-courses__introduction__content flex">
+    <h1 id="all-courses">All Courses</h1>
+    <p>
+      It is a long established fact that a reader will be distracted by the
+      readable ore-or-less normal distribution of letters,
+    </p>
+  </div>
+  <div class="all-courses__introduction__search">
+    <input type="text" name="search" placeholder="Search course..." />
+    <img src="../public/asset/ei_search.svg" alt="search icon" />
+  </div>
+</section>
+<main class="all-courses-list container">
+  <% courses.map((course) => { %>
+  <a href="/courses/<%= course.slug%>" style="height: 100%">
+    <article class="card--course">
+      <h3><%= course.name%></h3>
+      <p>
+        <%= course.description.split(" ").splice(0, 20).join(" ").concat("...")
+        %>
+      </p>
+    </article>
+  </a>
+  <% }) %>
+</main>
+<script type="module" src="../../public/js/courses.js"></script>

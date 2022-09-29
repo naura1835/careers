@@ -1,0 +1,79 @@
+@use "../util" as u;
+
+.assessment {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+
+  @include u.breakpoint-up(tablet-landscape-up) {
+    flex-direction: row;
+    margin-top: 0px;
+  }
+
+  &__info {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 2;
+    max-width: 500px;
+
+    h2,
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: unset;
+
+      @include u.breakpoint-up(tablet-landscape-up) {
+        text-align: unset;
+      }
+    }
+    .progress__path {
+      display: none;
+
+      @include u.breakpoint-up(tablet-landscape-up) {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 20px;
+
+        .progress__path__lines {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .line {
+            height: 100px;
+          }
+
+          &:nth-child(3) {
+            height: 200px;
+          }
+        }
+      }
+      p {
+        height: fit-content;
+      }
+    }
+  }
+
+  &__item {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    flex: 1 1 500px;
+    max-width: unset;
+
+    .h2--hidden {
+      display: none;
+    }
+
+    .question {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+    }
+
+    &__btns {
+      // max-width: 500px;
+      // width: 100%;
+      justify-content: space-between;
+    }
+  }
+}

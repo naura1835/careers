@@ -1,0 +1,82 @@
+@use "../util";
+
+.hero-section {
+  @include util.container;
+  flex-direction: column;
+  height: 600px; //555px
+
+  @include util.breakpoint-up(phones-only) {
+    height: 800px;
+  }
+
+  @include util.breakpoint-up(tablet-landscape-up) {
+    flex-direction: row;
+    height: 550px;
+  }
+}
+
+.mission {
+  @include util.container;
+  flex-direction: column;
+
+  @include util.breakpoint-up(tablet-landscape-up) {
+    flex-direction: row;
+    column-gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  @include util.breakpoint-up(desktop-up) {
+    column-gap: 4.3rem;
+  }
+
+  .mission__title {
+    flex: 1 100%;
+  }
+
+  &__content {
+    flex: 1;
+    margin-bottom: 2.5rem;
+  }
+
+  &__list {
+    flex: 1;
+  }
+}
+
+.about {
+  @include util.container;
+  margin-top: 4em;
+
+  @include util.breakpoint-up(tablet-portrait-up) {
+    padding: 1.2em 10%;
+  }
+
+  h2 {
+    margin-bottom: 2.5rem;
+  }
+
+  .about__paragraph {
+    text-align: justify;
+
+    &:not(:last-child) {
+      margin-bottom: 1.875rem;
+    }
+  }
+}
+
+.CTA-section {
+  margin-top: 4em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

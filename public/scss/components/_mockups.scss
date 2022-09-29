@@ -1,0 +1,77 @@
+@use "../util" as u;
+
+.hero-section__mockups {
+  position: relative;
+  transform: scale(0.6);
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover > div:not(:first-child) {
+    transform: translateY(-10px);
+  }
+
+  .page-image {
+    @include u.mockupImage(pageMockup);
+    top: 100px;
+    left: 100px;
+  }
+
+  .personality-type-1 {
+    @include u.mockupImage(personality);
+    top: 300px;
+    left: -120px;
+  }
+
+  .personality-type-2 {
+    @include u.mockupImage(personality);
+    top: 200px;
+    left: -80px;
+    z-index: -1;
+  }
+
+  .mechatronics {
+    @include u.mockupImage(career);
+    top: 350px;
+    left: 100px;
+  }
+
+  .data-science {
+    @include u.mockupImage(career);
+    top: 450px;
+    left: 250px;
+  }
+
+  @include u.breakpoint-up(phones-only) {
+    flex-grow: 1;
+    transform: scale(0.9);
+    top: -50px;
+    left: 100px;
+
+    .mechatronics {
+      top: 440px;
+      left: 0;
+    }
+
+    .data-science {
+      top: 480px;
+    }
+  }
+
+  @include u.breakpoint-up(tablet-landscape-up) {
+    transform: scale(1);
+  }
+
+  @include u.breakpoint-up(desktop-up) {
+    // transform: scale(1.1);
+    left: 150px;
+  }
+}
+
+.CTA-section__image {
+  margin-top: 40px;
+  max-width: 100%;
+  width: 500px;
+  object-fit: 100%;
+}

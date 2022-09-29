@@ -1,0 +1,17 @@
+.flex {
+  display: flex;
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-fd-c {
+    flex-direction: column;
+  }
+  &-gap-20 {
+    gap: 20px;
+  }
+}
+// .flex-layout{
+//   display: flex;
+// }

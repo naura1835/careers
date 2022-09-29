@@ -1,0 +1,73 @@
+<div class="progress"></div>
+<main class="assessment container flex">
+  <aside class="assessment__info flex">
+    <h2>Take the test and get matched</h2>
+    <p>
+      It is a long established fact that a reader will be distracted by the
+      readable ore-or-less normal distribution of letters,
+    </p>
+    <div class="progress__path">
+      <div class="progress__path__lines">
+        <div class="circle">1</div>
+        <div class="line"></div>
+      </div>
+      <p>Enter average grades</p>
+      <div class="progress__path__lines">
+        <div class="circle">2</div>
+        <div class="line"></div>
+      </div>
+      <p>Take personality test</p>
+      <div class="progress__path__lines">
+        <div class="circle">3</div>
+      </div>
+      <p>Get matched</p>
+    </div>
+  </aside>
+  <section aria-labelledby="questions" class="assessment__item container">
+    <h2 aria-hidden="true" id="questions" class="h2--hidden">
+      Multiple choices Questions
+    </h2>
+    <p class="base">Rate your perfomance in...</p>
+    <p class="body-intro-text question"></p>
+    <ul class="radio-group">
+      <li class="radio-group__item flex">
+        <input type="radio" name="answer" id="option-1" value="5" />
+        <label for="option-1">Very Good</label>
+      </li>
+      <li class="radio-group__item flex">
+        <input type="radio" name="answer" id="option-2" value="4" />
+        <label for="option-2">Good</label>
+      </li>
+      <li class="radio-group__item flex">
+        <input type="radio" name="answer" id="option-3" value="3" />
+        <label for="option-3">Average</label>
+      </li>
+      <li class="radio-group__item flex">
+        <input type="radio" name="answer" id="option-4" value="2" />
+        <label for="option-4">Bad</label>
+      </li>
+      <li class="radio-group__item flex">
+        <input type="radio" name="answer" id="option-5" value="1" />
+        <label for="option-5">Very Bad</label>
+      </li>
+    </ul>
+    <div class="assessment__item__btns flex">
+      <div class="btn--previous">
+        <img
+          src="../public/asset/ant-design_arrow-left-outlined.svg"
+          alt="go back to previous question arrow"
+        />PREV
+      </div>
+      <button class="btn--next">
+        NEXT QUESTION
+        <img
+          src="../public/asset/akar-icons_arrow-right.svg"
+          alt="go to next question arrow"
+        />
+      </button>
+      <a href="/results" class="btn--get-results">Get Results</a>
+    </div>
+  </section>
+  <a href="/results" class="btn--test">Test Results</a>
+</main>
+<script type="module" src="../public//js/assessment.js"></script>

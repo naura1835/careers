@@ -1,0 +1,35 @@
+<main class="container flex flex-fd-c details">
+  <div class="details__intro">
+    <h1 class="details__title"><%= course.name %></h1>
+    <p><%= course.description %></p>
+  </div>
+  <div>
+    <h2>Responsibilities</h2>
+    <ul class="responsibilities__list">
+      <% course.responsibilities.map((item) => {%>
+      <li class="medium-text responsibilities__list__item"><%= item %></li>
+      <%})%>
+    </ul>
+  </div>
+  <div>
+    <h3>Place of work</h3>
+    <div class="flex flex-wrap flex-gap-20">
+      <% course.placeOfWork.split(',').map((place) => { %>
+      <div class="chip">
+        <span><%= place %></span>
+      </div>
+      <%})%>
+    </div>
+  </div>
+  <div>
+    <h3>Course Combination</h3>
+    <div class="flex flex-wrap flex-gap-20">
+      <% let subjects = Object.keys(course.courseCombo).filter((subject) =>
+      course.courseCombo[subject]) %> <% subjects.map((subject) => {%>
+      <div class="chip">
+        <span><%= subject%></span>
+      </div>
+      <%})%>
+    </div>
+  </div>
+</main>

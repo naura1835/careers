@@ -1,0 +1,49 @@
+@use "../util";
+
+html {
+  font-size: 70%;
+  box-sizing: border-box;
+
+  @include util.breakpoint-up("tablet-portrait-up") {
+    font-size: 100%;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  // cursor: none;
+}
+
+// .cursor {
+//   pointer-events: none;
+//   width: 1rem;
+//   aspect-ratio: 1;
+//   border-radius: 50%;
+//   background-color: $secondary-color;
+//   position: absolute;
+//   transform: translate(-50%, -50%);
+//   transition: width 0.5s linear;
+// }
+// .click {
+//   width: 5rem;
+//   aspect-ratio: 1;
+//   font-size: 12px;
+//   letter-spacing: 0.05rem;
+//   display: grid;
+//   place-items: center;
+// }

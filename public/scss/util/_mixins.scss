@@ -1,0 +1,32 @@
+@mixin container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 2em; //1.2
+}
+
+@mixin mockupImage($type) {
+  position: absolute;
+
+  @if $type == pageMockup {
+    max-width: 500px;
+    width: 100%;
+  } @else if $type == personality {
+    max-width: 100%;
+    width: 200px;
+    transition: all 0.8s linear;
+  } @else if $type == career {
+    max-width: 100%;
+    width: 220px;
+    transition: all 0.8s linear;
+  }
+}
+
+@mixin courseWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 40px;
+  column-gap: 40px;
+  place-items: center;
+  min-height: 100px;
+}

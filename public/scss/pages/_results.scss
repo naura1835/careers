@@ -1,0 +1,16 @@
+@use "../util/" as *;
+
+.results__introduction {
+  align-items: center;
+  max-width: 500px;
+  text-align: center;
+  margin: unset;
+
+  @include breakpoint-up(tablet-landscape-up) {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+.results__list {
+  @include courseWrapper;
+}

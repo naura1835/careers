@@ -1,0 +1,28 @@
+@use "../util" as u;
+
+.hero-section__content {
+  flex-direction: column;
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  @include u.breakpoint-up(phones-only) {
+    max-width: 500px;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  @include u.breakpoint-up(tablet-landscape-up) {
+    align-items: flex-start;
+    flex: 1;
+    p {
+      text-align: left;
+    }
+  }
+}

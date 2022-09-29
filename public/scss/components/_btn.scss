@@ -1,0 +1,121 @@
+@use "../util";
+
+.btn {
+  background: var(--accent-color);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: fit-content;
+  padding: 1em 1.125em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  font-size: 15px;
+  transform-origin: left;
+  transition: background 0.3s linear;
+
+  @include util.breakpoint-up(phones-only) {
+    padding: 1em 2.125em;
+  }
+
+  &:hover {
+    background: var(--secondary-color);
+    color: var(--text-color);
+  }
+}
+
+.btn--flat {
+  outline: none;
+  border: none;
+  width: fit-content;
+  padding: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  background-color: transparent;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta--btn {
+  align-items: center;
+  background-color: var(--text-color);
+  color: var(--primary-color) !important;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+
+  // .arrow-svg {
+  //   justify-self: flex-end;
+  //   height: 15px;
+  //   width: 20px;
+  //   background-color: var(--primary-color);
+  //   -webkit-mask: url("../asset/akar-icons_arrow-right.svg") no-repeat center;
+  //   mask: url("../asset/akar-icons_arrow-right.svg") no-repeat center;
+  // }
+
+  &:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color) !important;
+
+    .arrow-svg {
+      background-color: var(--text-color);
+    }
+  }
+}
+
+.btn--previous {
+  width: auto;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+.btn--next {
+  @extend .btn--previous;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 1em;
+  width: auto;
+}
+.btn--get-results {
+  display: none;
+  align-items: center;
+  height: 40px;
+  width: auto;
+  border-radius: 10px;
+  padding: 1em;
+  background-color: var(--secondary-color);
+}
+
+.btn--test {
+  position: fixed;
+  right: 1%;
+  top: 20%;
+  display: block;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  width: fit-content;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+// .pagination__btn--prev,
+// .pagination__btn--next {
+//   @extend .cta--btn;
+//   border-radius: 50%;
+//   border: none;
+//   padding: 0.5rem;
+// }
+
+// .arrow-svg {
+//   height: 15px;
+//   width: 20px;
+//   background-color: var(--secondary-color);
+//   -webkit-mask: url("../asset/akar-icons_arrow-right.svg") no-repeat center;
+//   mask: url("../asset/akar-icons_arrow-right.svg") no-repeat center;
+// }

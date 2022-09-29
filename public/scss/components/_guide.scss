@@ -1,0 +1,69 @@
+@use "../util" as u;
+
+.guide {
+  &__info__text {
+    margin-bottom: 30px;
+  }
+
+  &__path {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    column-gap: 10px;
+    // row-gap: 20px;
+
+    @include u.breakpoint-up(tablet-landscape-up) {
+      grid-template-columns: 1fr 30px 1fr;
+    }
+
+    &__lines {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // row-gap: 20px;
+
+      &:first-child {
+        display: none;
+      }
+
+      @include u.breakpoint-up(tablet-landscape-up) {
+        // row-gap: 10px;
+        grid-column: 2/3;
+
+        &:first-child {
+          display: flex;
+          grid-column: 1/4;
+
+          .line {
+            height: 100px;
+          }
+        }
+      }
+    }
+
+    .card {
+      &:not(&:nth-of-type(3)) {
+        margin-bottom: 2em;
+      }
+
+      @include u.breakpoint-up(tablet-landscape-up) {
+        // background-color: aqua;
+        &:nth-of-type(1) {
+          grid-column: 1/2;
+          grid-row: 2/3;
+        }
+
+        &:nth-of-type(3) {
+          grid-column: 1/2;
+          grid-row: 4/5;
+        }
+      }
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+      p {
+        line-height: 25px;
+      }
+    }
+  }
+}

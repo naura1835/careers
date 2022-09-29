@@ -1,0 +1,83 @@
+@use "../util";
+
+h1 {
+  font-size: 2.125rem; //48px 60px
+
+  @include util.breakpoint-up(tablet-portrait-up) {
+    font-size: 3rem;
+  }
+
+  @include util.breakpoint-up(desktop-up) {
+    font-size: 3.75rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem; //38px  40px
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+
+  @include util.breakpoint-up(tablet-portrait-up) {
+    font-size: 2.375rem;
+  }
+  @include util.breakpoint-up(tablet-portrait-up) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 20px; //24px
+  margin-bottom: 0.625rem;
+
+  @include util.breakpoint-up(tablet-portrait-up) {
+    font-size: 24px;
+  }
+}
+
+p,
+.medium-text {
+  font-size: 15px;
+  line-height: 30px;
+
+  @include util.breakpoint-up(tablet-portrait-up) {
+    font-size: 18px;
+  }
+}
+
+.hero-section__h1 {
+  color: var(--text-color2);
+  margin-bottom: 1.25rem;
+
+  @include util.breakpoint-up(phones-only) {
+    text-align: center;
+  }
+
+  @include util.breakpoint-up(tablet-landscape-up) {
+    text-align: left;
+    margin-bottom: 2.6rem;
+  }
+}
+
+.caption-text {
+  font-size: 12px;
+}
+.body-intro-text {
+  font-size: 18px;
+}
+.large-text {
+  font-size: 60px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  align-self: flex-end;
+
+  @include util.breakpoint-up(tablet-landscape-up) {
+    font-size: 120px;
+  }
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+}

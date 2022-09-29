@@ -1,0 +1,95 @@
+@use "../util" as *;
+
+.all-courses__introduction {
+  flex-direction: column;
+
+  &__content {
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    text-align: center;
+
+    @include breakpoint-up(tablet-landscape-up) {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  @include breakpoint-up(tablet-landscape-up) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__search {
+    display: none;
+
+    @include breakpoint-up(tablet-landscape-up) {
+      display: flex;
+      align-items: center;
+      box-shadow: var(--border);
+      border-radius: 10px;
+      max-width: 300px;
+      width: 100%;
+      height: 50px;
+      padding: 0 20px;
+
+      img {
+        cursor: pointer;
+      }
+
+      [type="text"] {
+        flex: 1;
+        background: var(--bg-color);
+        color: var(--text-color);
+        border: none;
+        outline: none;
+        transition: all 0.5s ease-in;
+      }
+    }
+  }
+}
+
+.all-courses-list {
+  @include courseWrapper;
+
+  // &__course {
+  //   border-radius: 10px;
+  //   box-shadow: var(--border);
+  //   background-color: var(--primary-color);
+  //   padding: 2.75rem 1.5rem;
+  //   position: relative;
+  //   max-width: 400px;
+  //   height: 100%;
+
+  //   h3 {
+  //     text-transform: uppercase;
+  //     margin-bottom: 20px;
+  //   }
+
+  //   // &::after {
+  //   //   position: absolute;
+  //   //   top: 0;
+  //   //   content: "";
+  //   //   height: 100%;
+  //   //   width: 100%;
+  //   //   border-radius: inherit;
+  //   //   border: 1px solid var(--secondary-color);
+  //   //   transform: rotate(10deg) translateX(0);
+  //   //   transition: all 0.5s ease-in;
+  //   //   z-index: -1;
+  //   //   opacity: 0;
+  //   //   visibility: hidden;
+  //   // }
+
+  //   &:hover {
+  //     box-shadow: var(--border-secondary-color);
+  //     // background-color: var(--secondary-color);
+  //   }
+  //   // &:hover::after {
+  //   //   opacity: 1;
+  //   //   visibility: visible;
+  //   //   transform: rotate(-5.27deg) translateX(-10px);
+  //   // }
+  // }
+}

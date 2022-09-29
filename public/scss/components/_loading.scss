@@ -1,0 +1,19 @@
+.loading {
+  border-radius: 50%;
+  border: 3px solid var(--bg-color);
+  border-top: 4px solid var(--accent-color);
+  height: 40px;
+  width: 40px;
+  margin: 25% auto;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

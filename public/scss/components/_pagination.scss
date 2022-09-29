@@ -1,0 +1,30 @@
+@use "../util" as *;
+
+.pagination {
+  background-color: var(--primary-color);
+  box-shadow: var(--border);
+  //   , 2px 4px 10px 2px rgba(127, 75, 246, 0.1);
+  border-radius: 30px;
+  max-width: 800px;
+  padding: 5px 10px;
+  margin-inline: auto;
+  justify-content: space-between;
+  align-items: center;
+
+  &__btn--number {
+    display: none;
+
+    &:hover {
+      background-color: var(--secondary-color);
+      border-radius: 8px;
+    }
+
+    @include breakpoint-up(tablet-portrait-up) {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

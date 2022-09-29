@@ -1,0 +1,43 @@
+.radio-group {
+  margin-top: 20px;
+  list-style-type: none;
+
+  &__item {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: var(--border-secondary-color);
+    margin-bottom: 30px;
+    padding: 1em;
+    margin-inline: auto;
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+
+    [type="radio"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      margin: 0;
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--text-color);
+      display: grid;
+      place-content: center;
+
+      &::before {
+        content: url("../../../public/asset/ant-design_check-outlined.svg");
+        transform: scale(0);
+      }
+      &:checked::before {
+        transform: scale(1);
+      }
+    }
+    label {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+    }
+  }
+}
