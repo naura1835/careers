@@ -8,7 +8,7 @@ const coursesRouter = require("./routes/courses");
 const assessmentRouter = require("./routes/assessment");
 const resultsRouter = require("./routes/results");
 
-require("dotenv").config();
+require("dotenv").config({ path: "./.env" });
 
 const app = express();
 const PORT = 5000;
