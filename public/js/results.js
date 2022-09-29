@@ -72,7 +72,7 @@ if (testCase.test) {
 }
 
 function fetchResults(obj) {
-  fetch("/results/my-result", {
+  fetch("https://career-guidance-api.herokuapp.com/results/my-result", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

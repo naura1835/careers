@@ -25,7 +25,7 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use("/public", express.static("public")); //if it dont't work add "/public",  before express.static
+app.use("/public", express.static("public"));
 app.use(express.json());
 
 app.use("/", homeRouter);
