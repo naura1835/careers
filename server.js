@@ -3,23 +3,26 @@ const expressLayouts = require("express-ejs-layouts");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
+const connectDB = require("./config/database");
 const homeRouter = require("./routes/home");
 const coursesRouter = require("./routes/courses");
 const assessmentRouter = require("./routes/assessment");
 const resultsRouter = require("./routes/results");
 
-require("dotenv").config({ path: "./.env" });
+require("dotenv").config();
 
 const app = express();
 const PORT = 5000;
 
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("connected"))
-  .catch((err) => console.log(err));
+connectDB();
+
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("connected"))
+//   .catch((err) => console.log(err));
 
 app.set("view engine", "ejs");
 app.set("layout", "layouts/layout");
