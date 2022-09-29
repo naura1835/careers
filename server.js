@@ -13,11 +13,12 @@ require("dotenv").config();
 const app = express();
 const PORT = 5000;
 
-let dbConnection;
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("connected"));
 
 app.set("view engine", "ejs");
 app.set("layout", "layouts/layout");
@@ -34,15 +35,15 @@ app.use("/assessment", assessmentRouter);
 app.use("/results", resultsRouter);
 
 //i don't think i need to search based on personality
-app.get("/api/personality/:type", (req, res) => {
-  const personalityType = req.params.type.toLocaleUpperCase();
+// app.get("/api/personality/:type", (req, res) => {
+//   const personalityType = req.params.type.toLocaleUpperCase();
 
-  dbConnection
-    .find({ personalityType: personalityType })
-    .toArray()
-    .then((results) => res.json(results))
-    .catch((err) => console.log(err));
-});
+//   dbConnection
+//     .find({ personalityType: personalityType })
+//     .toArray()
+//     .then((results) => res.json(results))
+//     .catch((err) => console.log(err));
+// });
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Listening on port ${PORT}`);
