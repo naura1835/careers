@@ -9,17 +9,18 @@ const testCase = JSON.parse(localStorage.getItem("test")) || { test: false };
 
 if (testCase.test) {
   const data = {
-    mathematics: 8,
-    physics: 8,
-    chemistry: 8,
-    biology: 8,
-    geography: 8,
-    economics: 8,
-    agricultural_science: 8,
-    personality: "INTP",
+    mathematics: 5,
+    physics: 5,
+    chemistry: 4,
+    biology: 5,
+    geography: 5,
+    economics: 3,
+    agricultural_science: 3,
+    personality: "ISTJ",
   };
 
   window.addEventListener("load", () => fetchResults(data));
+
   localStorage.removeItem("test");
 } else if (!!subjectResultArray.length && !!personalityTypeResult.length) {
   const types = personalityTypeResult
@@ -50,16 +51,6 @@ if (testCase.test) {
     ...subjectResults,
     personality: personalityTypeString,
   };
-  // const data = {
-  //   mathematics: 8,
-  //   physics: 8,
-  //   chemistry: 8,
-  //   biology: 8,
-  //   geography: 8,
-  //   economics: 8,
-  //   agricultural_science: 8,
-  //   personality: personalityTypeResult,
-  // };
 
   window.addEventListener("load", () => fetchResults(data));
 } else {

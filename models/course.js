@@ -14,7 +14,7 @@ const courseSchema = new mongoose.Schema({
   },
   responsibilities: [String],
   placeOfWork: String,
-  personalityType: String,
+  personalityType: [String],
   slug: {
     type: String,
     lowercase: true,

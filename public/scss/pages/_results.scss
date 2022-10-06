@@ -4,11 +4,16 @@
   align-items: center;
   max-width: 500px;
   text-align: center;
-  margin: unset;
+  margin: 0 auto;
+
+  @include breakpoint-up(tablet-portrait-up) {
+    max-width: 800px;
+  }
 
   @include breakpoint-up(tablet-landscape-up) {
     align-items: flex-start;
     text-align: left;
+    margin: unset;
   }
 }
 .results__list {
